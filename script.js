@@ -37,11 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const displayTicker = document.getElementById('displayTicker');
 
     const revealInsight = () => {
-        const val = tickerInput.value.trim().toUpperCase() || 'AAPL';
+        const val = tickerInput.value.trim() || 'AT&T';
         displayTicker.textContent = val;
         
         // Add loading state to button
-        revealBtn.textContent = 'Analyzing...';
+        revealBtn.textContent = 'Searching Network...';
         revealBtn.style.opacity = '0.8';
         
         // Simulate network request
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 insightCard.classList.add('visible');
             }, 50);
             
-            revealBtn.textContent = 'Insight Revealed';
+            revealBtn.textContent = 'Biller Found';
             revealBtn.disabled = true;
             revealBtn.style.background = 'var(--accent)';
             revealBtn.style.opacity = '1';
