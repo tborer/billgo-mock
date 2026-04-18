@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frictionless Activation & Growth Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Navigation / Toggle -->
+        <header class="app-header">
+            <div class="logo">
+                <span class="logo-icon">✨</span>
+                <span class="logo-text">Catalyst</span>
+            </div>
+            <div class="view-toggle">
+                <span class="toggle-label">User Flow</span>
+                <label class="switch">
+                    <input type="checkbox" id="viewToggle">
+                    <span class="slider round"></span>
+                </label>
+                <span class="toggle-label pm-label">PM Analytics</span>
+            </div>
+        </header>
+
+        <!-- View 1: End-User Onboarding Flow -->
+        <main id="userFlowView" class="view active-view">
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1>Uncover Hidden Market Catalysts Instantly</h1>
+                    <p class="subtitle">Enter a ticker or sector to see predictive insights before you commit.</p>
+                    
+                    <div class="interactive-input">
+                        <input type="text" id="tickerInput" placeholder="e.g. AAPL, TSLA, Tech..." autocomplete="off">
+                        <button id="revealBtn" class="primary-btn">Reveal Insight</button>
+                    </div>
+                </div>
+
+                <div id="insightCard" class="glass-card insight-card hidden">
+                    <div class="insight-header">
+                        <div class="ticker-badge" id="displayTicker">AAPL</div>
+                        <span class="insight-time">Real-time Analysis</span>
+                    </div>
+                    <div class="insight-body">
+                        <h3 class="insight-title">Options Flow Anomaly Detected</h3>
+                        <p class="insight-desc">Unusual put volume clustered at $170 strike expiring this Friday. Historically precedes a 3-5% downward correction.</p>
+                        <div class="metric-row">
+                            <div class="metric">
+                                <span class="metric-label">Confidence</span>
+                                <span class="metric-value text-green">87%</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Impact</span>
+                                <span class="metric-value text-red">High Volatility</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="progressive-profiling">
+                <h2>Tailor Your Feed</h2>
+                <p>Select your preferences to unlock full access.</p>
+                <div class="steps-container">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Risk Tolerance</h3>
+                        <div class="options-grid" id="riskOptions">
+                            <button class="option-btn">Conservative</button>
+                            <button class="option-btn">Moderate</button>
+                            <button class="option-btn">Aggressive</button>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Preferred Asset Class</h3>
+                        <div class="options-grid" id="assetOptions">
+                            <button class="option-btn">Equities</button>
+                            <button class="option-btn">Crypto</button>
+                            <button class="option-btn">Options</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="ai-banner">
+                <div class="ai-icon">🤖</div>
+                <div class="ai-text">
+                    <strong>AI Agent Active</strong>
+                    <span>Curating your personalized dashboard based on recent selections...</span>
+                </div>
+                <div class="ai-pulse"></div>
+            </div>
+            
+            <div class="cta-section">
+                 <button class="primary-btn pulse-btn">Create Free Account to Save Preferences</button>
+            </div>
+        </main>
+
+        <!-- View 2: PM Growth Dashboard -->
+        <main id="pmDashboardView" class="view hidden-view">
+            <div class="dashboard-header">
+                <h2>Growth Analytics</h2>
+                <p>Tracking the "Frictionless Activation" experiment</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Acquisition Funnel -->
+                <div class="glass-card funnel-card">
+                    <h3>Acquisition Funnel</h3>
+                    <div class="funnel-container">
+                        <div class="funnel-stage">
+                            <div class="stage-info">
+                                <span class="stage-name">Landing Page Visit</span>
+                                <span class="stage-count">10,000</span>
+                            </div>
+                            <div class="bar-container"><div class="bar" style="width: 100%;"></div></div>
+                        </div>
+                        <div class="funnel-stage">
+                            <div class="stage-info">
+                                <span class="stage-name">Insight Generated</span>
+                                <span class="stage-count">7,500</span>
+                            </div>
+                            <div class="bar-container"><div class="bar" style="width: 75%;"></div></div>
+                            <span class="conversion-rate">75%</span>
+                        </div>
+                        <div class="funnel-stage drop-off-highlight">
+                            <div class="stage-info">
+                                <span class="stage-name text-red">Account Created</span>
+                                <span class="stage-count text-red">3,000</span>
+                            </div>
+                            <div class="bar-container"><div class="bar bg-red" style="width: 30%;"></div></div>
+                            <span class="conversion-rate text-red">-60% Drop-off</span>
+                        </div>
+                        <div class="funnel-stage">
+                            <div class="stage-info">
+                                <span class="stage-name">First Deposit</span>
+                                <span class="stage-count">1,200</span>
+                            </div>
+                            <div class="bar-container"><div class="bar" style="width: 12%;"></div></div>
+                            <span class="conversion-rate">40%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-column">
+                    <!-- Action Plan -->
+                    <div class="glass-card action-card">
+                        <h3>Next Sprint Action Plan</h3>
+                        <ul class="action-list">
+                            <li class="action-item">
+                                <span class="status-dot sprint"></span>
+                                <div>
+                                    <strong>Hypothesis 1 (High Priority):</strong>
+                                    <p>Delaying email verification until after first deposit will increase Account Creation completion by 15%.</p>
+                                </div>
+                            </li>
+                            <li class="action-item">
+                                <span class="status-dot backlog"></span>
+                                <div>
+                                    <strong>Hypothesis 2:</strong>
+                                    <p>Adding social proof ("1,200 traders joined today") next to the create account button will increase conversion.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Cohort Matrix -->
+                    <div class="glass-card cohort-card">
+                        <h3>7-Day Retention by Channel</h3>
+                        <div class="cohort-matrix">
+                            <div class="matrix-header">
+                                <span>Channel</span>
+                                <span>D1</span>
+                                <span>D3</span>
+                                <span>D7</span>
+                            </div>
+                            <div class="matrix-row">
+                                <span class="channel-name">Organic Search</span>
+                                <span class="retention-cell h-high">45%</span>
+                                <span class="retention-cell h-med">32%</span>
+                                <span class="retention-cell h-med">28%</span>
+                            </div>
+                            <div class="matrix-row">
+                                <span class="channel-name">Paid Social</span>
+                                <span class="retention-cell h-med">30%</span>
+                                <span class="retention-cell h-low">15%</span>
+                                <span class="retention-cell h-low">8%</span>
+                            </div>
+                            <div class="matrix-row">
+                                <span class="channel-name">Referral</span>
+                                <span class="retention-cell h-highest">60%</span>
+                                <span class="retention-cell h-high">55%</span>
+                                <span class="retention-cell h-high">48%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
