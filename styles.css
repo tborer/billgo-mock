@@ -607,8 +607,65 @@ input:checked + .slider:before {
 .h-high { background: rgba(59, 130, 246, 0.6); }
 .h-highest { background: rgba(59, 130, 246, 0.8); }
 
+/* API Health Metrics */
+.api-health-section {
+    max-width: 800px;
+    margin: -2rem auto 3rem;
+    padding: 0 1rem;
+}
+
+.health-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.health-card {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid var(--card-border);
+    border-radius: 0.75rem;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.2s;
+}
+
+.health-card:hover {
+    transform: translateY(-2px);
+    background: rgba(30, 41, 59, 0.6);
+}
+
+.health-icon {
+    font-size: 1.5rem;
+    background: rgba(255,255,255,0.05);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.health-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.health-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.health-value {
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
 @media (max-width: 768px) {
     .dashboard-grid, .steps-container {
+        grid-template-columns: 1fr;
+    }
+    .health-grid {
         grid-template-columns: 1fr;
     }
     .metric-row {
